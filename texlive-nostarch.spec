@@ -1,3 +1,9 @@
+# revision 15878
+# category Package
+# catalog-ctan /macros/latex/contrib/nostarch
+# catalog-date 2008-08-22 17:15:44 +0200
+# catalog-license lppl
+# catalog-version 1.3
 Name:		texlive-nostarch
 Version:	1.3
 Release:	1
@@ -56,6 +62,7 @@ printed and for electronic books.
 %doc %{_texmfdistdir}/source/latex/nostarch/Makefile
 %doc %{_texmfdistdir}/source/latex/nostarch/nostarch.dtx
 %doc %{_texmfdistdir}/source/latex/nostarch/nostarch.ins
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -66,3 +73,5 @@ printed and for electronic books.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar bibtex makeindex tex doc source %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
