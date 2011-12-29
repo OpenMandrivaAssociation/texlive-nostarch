@@ -18,9 +18,6 @@ BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
-Conflicts:	texlive-texmf <= 20110705-3
-Conflicts:	texlive-doc <= 20110705-3
-Conflicts:	texlive-source <= 20110705-3
 
 %description
 The package provides the "official" LaTeX style for No Starch
@@ -28,20 +25,12 @@ Press. Provided are a a class, a package for interfacing to
 hyperref and an index style file. The style serves both for
 printed and for electronic books.
 
-%pre
-    %_texmf_mktexlsr_pre
-
 %post
-    %_texmf_mktexlsr_post
-
-%preun
-    if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_pre
-    fi
+    %{_sbindir}/texlive.post
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_post
+	%{_sbindir}/texlive.post
     fi
 
 #-----------------------------------------------------------------------
@@ -63,7 +52,6 @@ printed and for electronic books.
 %doc %{_texmfdistdir}/source/latex/nostarch/Makefile
 %doc %{_texmfdistdir}/source/latex/nostarch/nostarch.dtx
 %doc %{_texmfdistdir}/source/latex/nostarch/nostarch.ins
-%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -74,5 +62,3 @@ printed and for electronic books.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar bibtex makeindex tex doc source %{buildroot}%{_texmfdistdir}
-mkdir -p %{buildroot}%{_tlpkgobjdir}
-cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
