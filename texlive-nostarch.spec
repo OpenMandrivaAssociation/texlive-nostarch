@@ -6,7 +6,7 @@
 # catalog-version 1.3
 Name:		texlive-nostarch
 Version:	1.3
-Release:	6
+Release:	7
 Summary:	LaTeX class for No Starch Press
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/nostarch
