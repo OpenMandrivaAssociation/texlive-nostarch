@@ -1,6 +1,6 @@
 Name:		texlive-nostarch
-Version:	15878
-Release:	2
+Version:	67408
+Release:	1
 Summary:	LaTeX class for No Starch Press
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/nostarch
