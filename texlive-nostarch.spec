@@ -1,5 +1,5 @@
 Name:		texlive-nostarch
-Version:	67408
+Version:	67683
 Release:	1
 Summary:	LaTeX class for No Starch Press
 Group:		Publishing
